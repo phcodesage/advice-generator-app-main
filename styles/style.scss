@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;800&display=swap');
+
+*, *::before, ::after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px; // for rem
+}
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+$Manrope: 'Manrope', sans-serif;
+
+
+body {
+    background-color: $DarkBlue;
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: hidden;
+    .card {
+        background-color: $DarkGrayishBlue;
+        position: relative;
+        width: 550px;
+        height: 350px;
+        border-radius: 15px;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        .card-items .advice-title {
+            color: $NeonGreen;
+            font-size: 0.9rem;
+            font-family: $Manrope;
+            letter-spacing: 5px;
+            margin-top: 40px;
+        }
+        .card-items .advice-description {
+            color: $LightCyan;
+            font-family: $Manrope;
+            font-weight: 800;
+            text-align: center;
+            padding: 0 50px;
+            font-size: 1.7rem;
+        }
+        .advice-divider {
+            height: 50px;
+            background-image: url(/images/pattern-divider-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 50px;
+        }
+        .btn-div {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: -25px;
+
+            .advice-btn {
+                background-color: $NeonGreen;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                transform: scale(1.4);
+                img {
+                    transform: scale(0.8);
+                }
+        }
+         
+        }
+    }
+    .attribution { font-size: 11px; text-align: center;
+        position: absolute;
+        bottom: 0;
+
+    }
+.attribution a { color: hsl(228, 45%, 44%); }
+}
+@media screen and (max-width: 550px) {
+    body {
+        .card {
+            max-width: 100%;
+            height: 500px;
+            .advice-divider {
+                background-image: url(/images/pattern-divider-mobile.svg);
+                margin-bottom: 20px;
+            }
+            .btn-div {
+                bottom: -50px;
+            }
+        }
+    }
+}
+
+
+
