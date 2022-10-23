@@ -2,7 +2,7 @@
     
  //DOM ELEMENTS
  const btn = document.querySelector(".advice-btn");
- const quote = document.getElementById("#advice-description");
+ const quote = document.getElementById("advice-description");
  const titleID = document.querySelector(".advice-title");
 
 
@@ -10,7 +10,7 @@
  async function updateQuote() {
      //Fetch a random quote from the https://api.adviceslip.com
         
-     const response = await fetch('https://api.advicesslip.com/advice');
+     const response = await fetch('https://api.adviceslip.com/advice');
      const data = await response.json();
      const slip = data.slip;
      if (response.ok) {

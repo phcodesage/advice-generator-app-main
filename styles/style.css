@@ -55,7 +55,7 @@ body .card .card-items .advice-title {
   margin-top: 40px;
 }
 
-body .card .card-items .advice-description {
+body .card #advice-description {
   color: #cee3e9;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
