@@ -32,78 +32,79 @@ body .card {
   background-color: #323a49;
   position: relative;
   width: 550px;
-  height: 350px;
+  min-height: 350px;
   border-radius: 15px;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 40px 70px;
 }
+
+
 
 body .card .card-items .advice-title {
   color: #52ffa8;
   font-size: 0.9rem;
   font-family: "Manrope", sans-serif;
   letter-spacing: 5px;
-  margin-top: 40px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
+
 
 body .card #advice-description {
   color: #cee3e9;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   text-align: center;
-  padding: 0 50px;
+  padding: 0 20px;
   font-size: 1.7rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 body .card .advice-divider {
-  height: 50px;
+  height: 16px;
+  width: 100%;
   background-image: url(/images/pattern-divider-desktop.svg);
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+
 body .card .btn-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  bottom: -25px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
 }
 
 body .card .btn-div .advice-btn {
   background-color: #52ffa8;
-  width: 50px;
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 64px;
+  height: 64px;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
+
 
 body .card .btn-div .advice-btn img {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
+}
+
+body .card .btn-div .advice-btn:hover {
+  box-shadow: 0 0 40px rgba(82, 255, 168, 0.5);
 }
 
 body .attribution {
@@ -117,17 +118,34 @@ body .attribution a {
   color: #3e52a3;
 }
 
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.advice-btn.animate {
+  animation: rotate 2s linear;
+  pointer-events: none;
+}
+
+
 @media screen and (max-width: 550px) {
   body .card {
-    max-width: 100%;
-    height: 500px;
-  }
-  body .card .advice-divider {
-    background-image: url(/images/pattern-divider-mobile.svg);
-    margin-bottom: 20px;
-  }
-  body .card .btn-div {
-    bottom: -50px;
+      width: 90%;
+      min-height: 300px;
+      padding: 30px 30px 60px;
   }
 }
+
+@keyframes loading {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+body .card #advice-description.loading {
+  animation: loading 1.5s infinite;
+}
+
+
 /*# sourceMappingURL=style.css.map */
